@@ -1,0 +1,37 @@
+package com.bridgeit;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.model.Demo;
+
+@Controller
+/*@RequestMapping("/form")*/
+public class DemoController {
+	
+	@RequestMapping(value="/form",method= RequestMethod.GET)
+	public ModelAndView getFrom(){
+		ModelAndView model1= new ModelAndView("form");
+		return model1;
+	}
+	@RequestMapping(value="/addDetails",method=RequestMethod.POST)
+	public ModelAndView addDetails(@RequestParam(value="fname",defaultValue="Akash") String fName,@RequestParam("lname") String lName)
+	{
+		ModelAndView model1 = new ModelAndView("success");
+		/*model1.addObject("msg","Details submited by you :: Name: "+fName+" "+lName);*/
+		
+		Demo demo = new Demo();
+		demo.setFname(fName);
+		demo.setLname(lName);
+		model1.addObject("headerMessage","Welcome to Spring MVC");
+		model1.addObject("details", demo)
+		
+		
+		return model1;
+		
+	}
+	
+}

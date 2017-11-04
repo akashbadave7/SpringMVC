@@ -1,0 +1,26 @@
+package com.bridgeit.model;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+public class Message {
+	 
+    String name;
+    String text;
+ 
+    public Message(String name, String text) {
+        this.name = name;
+        this.text = text;
+    }
+    @JsonFormat
+    public String getName() {
+        return name;
+    }
+    @JsonFormat
+    public String getText() {
+        return text;
+    }
+ 
+}

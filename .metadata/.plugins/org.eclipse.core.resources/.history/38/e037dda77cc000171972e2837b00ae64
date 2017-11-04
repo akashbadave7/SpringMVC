@@ -1,0 +1,10 @@
+package com.bridgeit;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class StudentController {
+
+	@RequestMapping(value="/student",method= RequestMethod.Get)
+}

@@ -1,0 +1,43 @@
+package com.bridgeit;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.model.Demo;
+
+@Controller
+/*@RequestMapping("/form")*/
+public class DemoController {
+	
+	@RequestMapping(value="/form",method= RequestMethod.GET)
+	public ModelAndView getFrom(){
+		ModelAndView model1= new ModelAndView("form");
+		/*model1.addObject("headerMessage","Welcome to Spring MVC");*/
+		return model1;
+	}
+	
+	@ModelAttribute
+	public void addingCommonObjext(Model model1)
+	{
+		model1.addAttribute("headerMessage","Welcome to Spring MVC");
+	}
+	@RequestMapping(value="/addDetails",method=RequestMethod.POST)
+	/*public ModelAndView addDetails(@RequestParam(value="fname",defaultValue="Akash") String fName,@RequestParam("lname") String lName)*/
+	public ModelAndView addDetails(@ModelAttribute("demo") Demo demo)
+	{
+		ModelAndView model1 = new ModelAndView("success");
+		System.out.println(demo.);
+		/*model1.addObject("msg","Details submited by you :: Name: "+fName+" "+lName);*/
+		/*model1.addObject("headerMessage","Welcome to Spring MVC");*/
+		
+		
+		return model1;
+		
+	}
+	
+}

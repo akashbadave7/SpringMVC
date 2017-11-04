@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>${headerMessage}</h2>
+	<form action="addDetails" method="POST">
+	<table>
+	<tr>
+		<td>FirstName : <input type="text" name="fname"><br></td>
+	</tr>
+	<tr>
+		<td>LastName : <input type="text" name="lname"><br></td>
+	</tr>
+	<tr>
+		<td>Mobile : <input type="text" name="mobile"><br></td>
+	</tr>
+		
+	<tr>
+		<td>DOB : <input type="text" name="dob"><br></td>
+	</tr>
+	<tr>
+		<td>Skill Set: <select name="skill" multiple>
+					<option value="Java Core">Java Core</option>
+					<option value="Spring Core">Spring Core</option>
+					<option value="Spring MVC">Spring MVC</option>
+					</select></td>
+	</tr>	
+		<input type="submit" value="Submit"/>
+		</table>
+	</form>
+</body>
+</html>

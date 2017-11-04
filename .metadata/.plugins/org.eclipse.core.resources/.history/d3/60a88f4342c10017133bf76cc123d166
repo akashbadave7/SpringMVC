@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+			<form:form action="register" method="post" commandName="userForm">
+            <table border="0">
+                <tr>
+                    <td colspan="2" align="center"><h2>Spring MVC Form Demo - Registration</h2></td>
+                </tr>
+                <tr>
+                    <td>First Name</td>
+                    <td><form:input path="fname" /></td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td><form:password path="lname" /></td>
+                </tr>
+                <tr>
+                    <td>Mobile</td>
+                    <td><form:input path="mobile" /></td>
+                </tr>
+                <tr>
+                    <td>Birthday (mm/dd/yyyy):</td>
+                    <td><form:input path="dob" /></td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td>Country :<form:input path="country" />
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="submit" value="Register" /></td>
+                </tr>
+            </table>
+        </form:form>
+	</table>
+	<table>
+		<tr><td>Address: </td></tr>
+		<tr>
+			<td>Country : <input type="text" name="address.country"></td>
+			<td>City : <input type="text" name="address.city"></td>
+			<td>Street : <input type="text" name="address.street"></td>
+			<td>PinCode : <input type="text" name="address.pincode"></td>
+	</tr>
+
+		<tr><td><input type="submit" value="Submit"/></td></tr>
+	</table>
+	</form>
+</body>
+</html>

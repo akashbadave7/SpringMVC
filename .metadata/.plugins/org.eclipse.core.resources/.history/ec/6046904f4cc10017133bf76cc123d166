@@ -1,0 +1,14 @@
+package com.bridgeit;
+
+import org.omg.PortableServer.ServantRetentionPolicyValue;
+
+public class NameEditor {
+	@Override
+	public void setAsText(String fname)
+	{
+		if(fname.contains("Mr.") || fname.contains("Ms.")){
+			setValue(fname);
+		}
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.bridgeit.configuration;
+
+@Configuration
+@EnableWebMvc
+@ComponentScan(basePackages = "com.websystique.springmvc")
+public class Configuration {
+     
+ 
+}
